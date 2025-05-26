@@ -8,7 +8,9 @@ class Main{
     System.out.println(addizione(dato1,dato2));
     System.out.println(dividi(dato1,dato2));
   }
-
+public static void addizione(double a, double b){
+	return a+b;
+}
 public static int sottrai(int a, int b) {
         return a - b;
 }
