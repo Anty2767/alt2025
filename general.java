@@ -1,35 +1,37 @@
-class Main{
-	class Main{
+import java.io.*;
+
+class prova{
 
   public static void main(String args[]){
-    int dato1=leggiDouble("inserisci 1^ numero");
-    int dato2=leggiDouble("inserisci 2^ numero");
+    double dato1=leggiDouble("inserisci 1^ numero");
+    double dato2=leggiDouble("inserisci 2^ numero");
     System.out.println(sottrai(dato1,dato2));
     System.out.println(addizione(dato1,dato2));
     System.out.println(dividi(dato1,dato2));
   }
-public static void addizione(double a, double b){
-	return a+b;
-}
-public static int sottrai(int a, int b) {
-        return a - b;
-}
 
-public double dividi(double dividendo, double divisore) {
-	
-		try{
-			if(divisore==0) {
-				if(dividendo>0) return Double.POSITIVE_INFINITY;
-				else return Double.NEGATIVE_INFINITY;
-			} else {
-				double risultato = dividendo/divisore;
-				return risultato;
-			}
-		} catch (Exception e) {
-			return 0;
-		}
-		
-	}
+    public static double addizione(double a, double b){
+        return a+b;
+    }
+    public static double sottrai(double a, double b) {
+            return a - b;
+    }
+
+    public static double dividi(double dividendo, double divisore) {
+        
+            try{
+                if(divisore==0) {
+                    if(dividendo>0) return Double.POSITIVE_INFINITY;
+                    else return Double.NEGATIVE_INFINITY;
+                } else {
+                    double risultato = dividendo/divisore;
+                    return risultato;
+                }
+            } catch (Exception e) {
+                return 0;
+            }
+            
+        }
 
 /**
    * Legge un valore di tipo double da input.
@@ -45,9 +47,9 @@ public double dividi(double dividendo, double divisore) {
         numeroInserito=Double.parseDouble(leggiStringa(domanda));
         conversione=true;
       }catch(ArithmeticException e){
-        Colori.rosso("devi inserire un numero! "+e+"\n");
+        System.out.println("devi inserire un numero! "+e+"\n");
       }catch(Exception e){
-        Colori.rosso("errore nella conversione "+e+"\n");
+        System.out.println("errore nella conversione "+e+"\n");
       }
     }while(!conversione);
     return numeroInserito;
@@ -69,13 +71,11 @@ public double dividi(double dividendo, double divisore) {
         risposta = k.readLine();
         corretto=true;
       }catch(IOException e){
-        Colori.rosso("errore nell'acquisizione del dato!\n");
+        System.out.println("errore nell'acquisizione del dato!\n");
       }catch(Exception e){
-        Colori.rosso("errore "+e+"\n");
+        System.out.println("errore "+e+"\n");
       }
     }while(!corretto);
     return risposta;
   }  
-}
-
 }
